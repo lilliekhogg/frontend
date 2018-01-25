@@ -9,11 +9,13 @@ import play.api.mvc._
 
 object DashboardRenderer extends Results {
 
-  def renderDashboard(testName: String, dashboardTitle: String, controlColour: String, variantColour: String)(
-    implicit request: RequestHeader,
-    context: ApplicationContext): Result = {
+  def renderDashboard(reportToUse: String,
+                      testName: String,
+                      dashboardTitle: String,
+                      controlColour: String,
+                      variantColour: String)(implicit request: RequestHeader, context: ApplicationContext): Result = {
     val maybeData = for {
-      reportId                  <- CommercialDfpReporting.reportMappings.get(CommercialDfpReporting.teamKPIReport)
+      reportId                  <- CommercialDfpReporting.reportMappings.get(reportToUse)
       report: Seq[DfpReportRow] <- CommercialDfpReporting.getReport(reportId)
     } yield {
       val keyValueRows: Seq[KeyValueRevenueRow] = report.flatMap { row =>
