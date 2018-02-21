@@ -41,7 +41,7 @@ object CollectionConfig {
       showTimestamps = config.showTimestamps,
       hideShowMore = config.hideShowMore,
       displayHints = config.displayHints.map(DisplayHints.make),
-      platform = config.platform
+      platform = Some(config.platform)
     )
   }
 
@@ -69,7 +69,7 @@ final case class CollectionConfig(
   showTimestamps: Boolean,
   hideShowMore: Boolean,
   displayHints: Option[DisplayHints],
-  platform: CollectionPlatform = AnyPlatform
+  platform: Option[CollectionPlatform] = None
 )
 
 object CardStyle {

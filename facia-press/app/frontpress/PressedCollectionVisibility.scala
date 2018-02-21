@@ -63,5 +63,7 @@ object PressedCollectionVisibility {
   }
 
   def isWebCollection(c: PressedCollectionVisibility): Boolean =
-    c.pressedCollection.config.platform == AnyPlatform || c.pressedCollection.config.platform == WebCollection
+    c.pressedCollection.config.platform.isEmpty ||
+      c.pressedCollection.config.platform.contains(AnyPlatform) ||
+      c.pressedCollection.config.platform.contains(WebCollection)
 }
