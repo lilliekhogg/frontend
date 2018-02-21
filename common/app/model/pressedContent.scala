@@ -6,7 +6,7 @@ import com.gu.contentapi.client.utils.DesignType
 import com.gu.contentapi.client.utils.CapiModelEnrichment.RichContent
 import com.gu.facia.api.utils.FaciaContentUtils
 import com.gu.facia.api.{models => fapi, utils => fapiutils}
-import com.gu.facia.client.models.{Backfill, CollectionConfigJson, Metadata, AnyPlatform, CollectionPlatform}
+import com.gu.facia.client.models.{Backfill, CollectionConfigJson, Metadata, CollectionPlatform}
 import common.{Edition, HTML}
 import common.commercial.EditionBranding
 import model.content.{Atoms, MediaAtom}
