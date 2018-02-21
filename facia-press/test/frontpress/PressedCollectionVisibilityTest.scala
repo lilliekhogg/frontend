@@ -48,7 +48,7 @@ class PressedCollectionVisibilityTest extends FlatSpec with Matchers with FaciaT
 
   it should "identify web collections" in new PressedCollectionVisibilityScope {
     def withPlatform(platform: CollectionPlatform): PressedCollectionVisibility = PressedCollectionVisibility(
-      pressedCollection = pressedCollection.copy(config = pressedCollection.config.copy(platform = platform)),
+      pressedCollection = pressedCollection.copy(config = pressedCollection.config.copy(platform = Some(platform))),
       3
     )
 
